@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./index.css"/>
+    <title>Handson1_MongoDB</title>
+</head>
+<body>
+    <h2>Q1. Create a database , give it name like ""Human_Resource"".</h2>
+    <h3>Ans-   use Human_Resource</h3>
+    <br/>
+    <h2>Q2. Create a collection inside this named ""employee""</h2>
+    <h3>Ans-   db.employee.insertMany([data in the form of objects])</h3>
+    <br/>
+    <h2>Q3. Query the collection ""employee"" and list all the documents</h2>
+    <h3> Ans-  db.employee.find()</h3>
+    <br/>
+    <h2>Q4. Query the collection ""employee"" and list the employees who are having salary more than 30000</h2>
+    <h3>Ans-  db.employee.find({salary: {$gt:'30000'}})</h3>
+    <br/>
+    <h2>Q5. Query the collection ""employee"" and list the employees who are having experience more than 2 years.</h2>
+    <h3>Ans-  db.employee.find({overallExp: {$gt: '2'}})</h3>
+    <br/>
+    <h2>Q6. Query the collection ""employee"" and list the employees who are graduated after 2015 and having experience more than 1 year</h2>
+    <h3>Ans- db.employee.find({yearGrad: {$gt: '2015'}, overallExp: {$gt: '1'}})</h3>
+    <br/>
+    <h2>Q7. Query the collection ""employee"" and update the salary of the employee whose salary is greater than 30000 to 50000.</h2>
+    <h3>Ans-  db.employee.updateMany({salary: {$gt: '30000'}}, {$set: {salary: '50000'}})</h3>
+    <br/>
+    <h2>Q8. Delete all the documents from ""employee"" where last company is Y" </h2>
+    <h3>Ans- db.employee.deleteMany({lastCompany:'Y'})</h3>
+</body>
+</html>
